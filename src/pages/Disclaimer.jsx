@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/pages.css";
 
 const Disclaimer = () => {
   return (
     <div className="static-page">
       <div className="static-container">
-        <h1>Disclaimer</h1>
+        <div className="page-hero">
+          <p className="page-hero-eyebrow">Legal</p>
+          <h1 className="page-hero-title">Disclaimer</h1>
+        </div>
 
         <div className="disclaimer-content">
           <section className="disclaimer-section">
@@ -56,7 +60,7 @@ const Disclaimer = () => {
 
           <section className="disclaimer-section">
             <h2>User Responsibility</h2>
-            <p>Users of MStream are solely responsible for:</p>
+            <p>Users of Jiroframe are solely responsible for:</p>
             <ul className="responsibility-list">
               <li>
                 Complying with their local laws and regulations regarding online
@@ -84,9 +88,7 @@ const Disclaimer = () => {
               show information, including:
             </p>
             <ul className="tech-list">
-              <li>
-                Movie and TV show metadata (titles, descriptions, ratings)
-              </li>
+              <li>Movie and TV show metadata (titles, descriptions, ratings)</li>
               <li>Cast and crew information</li>
               <li>Poster images and backdrop artwork</li>
               <li>Genre classifications and release information</li>
@@ -98,8 +100,8 @@ const Disclaimer = () => {
           </section>
 
           <section className="disclaimer-section warning-section">
-            <div className="warning-banner">
-              <h3>⚠️ Important Notice</h3>
+            <div className="disclaimer-callout">
+              <p className="disclaimer-callout-title">⚠ Important Notice</p>
               <p>
                 The developers of Jiroframe are not responsible for any legal
                 issues that may arise from the use of this application. Users
@@ -112,16 +114,15 @@ const Disclaimer = () => {
           <section className="disclaimer-section support-section">
             <h2>Supporting Content Creators</h2>
             <p>
-              We believe in supporting the creative community. Here are some
-              official platforms where you can legally stream content and
-              support creators:
+              We believe in supporting the creative community. Stream legally
+              and support creators through official platforms:
             </p>
-            <div className="platform-list">
+            <div className="disclaimer-platforms">
               <a
                 href="https://netflix.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="platform-link"
+                className="disclaimer-platform-link"
               >
                 Netflix
               </a>
@@ -129,7 +130,7 @@ const Disclaimer = () => {
                 href="https://hulu.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="platform-link"
+                className="disclaimer-platform-link"
               >
                 Hulu
               </a>
@@ -137,7 +138,7 @@ const Disclaimer = () => {
                 href="https://disneyplus.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="platform-link"
+                className="disclaimer-platform-link"
               >
                 Disney+
               </a>
@@ -145,7 +146,7 @@ const Disclaimer = () => {
                 href="https://hbomax.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="platform-link"
+                className="disclaimer-platform-link"
               >
                 HBO Max
               </a>
@@ -153,7 +154,7 @@ const Disclaimer = () => {
                 href="https://amazon.com/primevideo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="platform-link"
+                className="disclaimer-platform-link"
               >
                 Amazon Prime Video
               </a>

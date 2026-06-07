@@ -1,11 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/pages.css";
 
 const About = () => {
   return (
     <div className="static-page">
       <div className="static-container">
-        <h1>About Jiroframe</h1>
+        <div className="page-hero">
+          <p className="page-hero-eyebrow">About</p>
+          <h1 className="page-hero-title">Jiroframe</h1>
+          <p className="page-hero-tagline">
+            Your destination for movies &amp; TV — elegant, fast, and always up
+            to date.
+          </p>
+        </div>
 
         <div className="about-content">
           <section className="about-section">
@@ -33,33 +41,35 @@ const About = () => {
           <section className="about-section">
             <h2>Features</h2>
             <div className="features-grid">
-              <div className="feature-card">
-                <div className="feature-icon">🎯</div>
-                <h3>Trending Content</h3>
-                <p>
+              <div className="feature-card-v2">
+                <div className="feature-card-v2-header">
+                  <span className="feature-card-v2-icon">🎯</span>
+                  <h3 className="feature-card-v2-title">Trending Content</h3>
+                </div>
+                <p className="feature-card-v2-desc">
                   Discover the most popular movies and TV shows updated weekly
                 </p>
               </div>
 
-              <div className="feature-card">
-                <div className="feature-icon">🔍</div>
-                <h3>Smart Search</h3>
-                <p>
+              <div className="feature-card-v2">
+                <div className="feature-card-v2-header">
+                  <span className="feature-card-v2-icon">🔍</span>
+                  <h3 className="feature-card-v2-title">Smart Search</h3>
+                </div>
+                <p className="feature-card-v2-desc">
                   Find your favorite content with our powerful search
                   functionality
                 </p>
               </div>
 
-              <div className="feature-card">
-                <div className="feature-icon">📱</div>
-                <h3>Responsive Design</h3>
-                <p>Enjoy seamless experience across all your devices</p>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-icon">⚡</div>
-                <h3>Fast Performance</h3>
-                <p>Optimized for speed with modern web technologies</p>
+              <div className="feature-card-v2">
+                <div className="feature-card-v2-header">
+                  <span className="feature-card-v2-icon">⚡</span>
+                  <h3 className="feature-card-v2-title">Fast Performance</h3>
+                </div>
+                <p className="feature-card-v2-desc">
+                  Optimized for speed with modern web technologies
+                </p>
               </div>
             </div>
           </section>
@@ -86,16 +96,14 @@ const About = () => {
               you!
             </p>
             <div className="contact-info">
-              <p>
-                🐙 GitHub:{" "}
-                <a
-                  href="https://github.com/cd-Crypton/jiroframe"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  github.com/cd-Crypton/jiroframe
-                </a>
-              </p>
+              <a
+                href="https://github.com/codewithjiro/Jiroframe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="about-github-badge"
+              >
+                🐙 github.com/codewithjiro/Jiroframe
+              </a>
             </div>
           </section>
         </div>
