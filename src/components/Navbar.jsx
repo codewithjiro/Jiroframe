@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ onSearch, searchResults, onItemClick, isSearching }) => {
   const [isScrolled, setIsScrolled] = React.useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -12,8 +12,8 @@ const Navbar = ({ onSearch, searchResults, onItemClick, isSearching }) => {
       setIsScrolled(window.scrollY > 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Function to get poster image URL
@@ -52,26 +52,34 @@ const Navbar = ({ onSearch, searchResults, onItemClick, isSearching }) => {
     if (onItemClick) {
       onItemClick(item);
     }
-    setSearchQuery('');
+    setSearchQuery("");
     setIsSearchFocused(false);
   };
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <img 
-            src="/logo/mstream-new.png" 
-            alt="MSTREAM Logo" 
+          <img
+            src="/logo/jiroframe-new.png"
+            alt="Jiroframe Logo"
             className="logo-image"
           />
         </Link>
 
         <div className="navbar-links">
-          <Link to="/" className="nav-link">Home</Link>
-          <Link to="/tv-shows" className="nav-link">TV Shows</Link>
-          <Link to="/movies" className="nav-link">Movies</Link>
-          <Link to="/popular" className="nav-link">Popular</Link>
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+          <Link to="/tv-shows" className="nav-link">
+            TV Shows
+          </Link>
+          <Link to="/movies" className="nav-link">
+            Movies
+          </Link>
+          <Link to="/popular" className="nav-link">
+            Popular
+          </Link>
         </div>
 
         <div className="navbar-search-container">
@@ -85,14 +93,14 @@ const Navbar = ({ onSearch, searchResults, onItemClick, isSearching }) => {
               onBlur={handleSearchBlur}
               className="navbar-search-input"
             />
-            
+
             {/* Inline Search Results Dropdown */}
             {isSearchFocused && searchQuery && (
               <div className="search-results-dropdown">
                 <div className="search-results-list">
                   {searchResults && searchResults.length > 0 ? (
-                    searchResults.map(item => (
-                      <div 
+                    searchResults.map((item) => (
+                      <div
                         key={`${item.id}-${item.media_type}`}
                         className="search-result-item"
                         onClick={() => handleItemSelect(item)}
@@ -100,8 +108,8 @@ const Navbar = ({ onSearch, searchResults, onItemClick, isSearching }) => {
                         {/* Poster Image */}
                         <div className="search-result-poster">
                           {getPosterUrl(item.poster_path) ? (
-                            <img 
-                              src={getPosterUrl(item.poster_path)} 
+                            <img
+                              src={getPosterUrl(item.poster_path)}
                               alt={item.title || item.name}
                               loading="lazy"
                             />
@@ -111,7 +119,7 @@ const Navbar = ({ onSearch, searchResults, onItemClick, isSearching }) => {
                             </div>
                           )}
                         </div>
-                        
+
                         <div className="search-result-info">
                           <div className="search-result-title">
                             {item.title || item.name}
@@ -144,8 +152,8 @@ const Navbar = ({ onSearch, searchResults, onItemClick, isSearching }) => {
           </div>
         </div>
 
-        <button 
-          className={`menu-toggle ${isMenuOpen ? 'open' : ''}`}
+        <button
+          className={`menu-toggle ${isMenuOpen ? "open" : ""}`}
           onClick={toggleMenu}
           aria-label="Toggle navigation menu"
         >
@@ -154,15 +162,23 @@ const Navbar = ({ onSearch, searchResults, onItemClick, isSearching }) => {
           <span></span>
         </button>
 
-        <div className={`side-menu ${isMenuOpen ? 'open' : ''}`}>
+        <div className={`side-menu ${isMenuOpen ? "open" : ""}`}>
           <div className="side-menu-header">
             <h3>Menu</h3>
           </div>
           <div className="side-menu-links">
-            <Link to="/" className="nav-link" onClick={closeMenu}>Home</Link>
-            <Link to="/tv-shows" className="nav-link" onClick={closeMenu}>TV Shows</Link>
-            <Link to="/movies" className="nav-link" onClick={closeMenu}>Movies</Link>
-            <Link to="/popular" className="nav-link" onClick={closeMenu}>Popular</Link>
+            <Link to="/" className="nav-link" onClick={closeMenu}>
+              Home
+            </Link>
+            <Link to="/tv-shows" className="nav-link" onClick={closeMenu}>
+              TV Shows
+            </Link>
+            <Link to="/movies" className="nav-link" onClick={closeMenu}>
+              Movies
+            </Link>
+            <Link to="/popular" className="nav-link" onClick={closeMenu}>
+              Popular
+            </Link>
           </div>
         </div>
 

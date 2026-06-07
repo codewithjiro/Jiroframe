@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,9 +9,9 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-left">
-            <p>&copy; {currentYear} MSTREAM. All rights reserved.</p>
+            <p>&copy; {currentYear} Jiroframe. All rights reserved.</p>
           </div>
-          
+
           <div className="footer-right">
             <Link to="/about" className="footer-link">
               About
